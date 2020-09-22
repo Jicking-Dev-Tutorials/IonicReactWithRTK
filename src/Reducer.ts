@@ -1,7 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { combineReducers, createSlice } from '@reduxjs/toolkit';
 
 
-const defaultCounterState = {
+interface  CounterState {
+    count: number
+}
+
+const defaultCounterState:CounterState = {
     count: 0
 }
 
@@ -28,8 +32,10 @@ export const {
 
 
 //selectors
-export const selectCounter = (state: { counter: any; }) => state.counter;
+export const selectCounter = (state: { counter: CounterState; }) => state.counter;
 
 
 // combine reducers
-export const rootReducer = counterSlice.reducer;
+export const rootReducer = combineReducers({
+	counter: counterSlice.reducer
+})
