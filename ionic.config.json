@@ -1,0 +1,7 @@
+{
+  "name": "IonicReactWithRTK",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
